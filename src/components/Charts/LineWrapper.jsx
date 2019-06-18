@@ -125,7 +125,7 @@ class LineWrapper extends React.Component {
           pdataArray.push(response.data.temp);
           let str = response.data.timestamp.substr(0, 5);
           prevLabels.push(str);
-          if (prevLabels.length >= 21) {
+          if (prevLabels.length >= 17) {
             pdataArray.shift();
             prevLabels.shift();
           }
