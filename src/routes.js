@@ -1,19 +1,32 @@
 import Dashboard from "views/Dashboard.jsx";
+import DashboardHall from "views/DashboardHall.jsx";
 import Icons from "views/Icons.jsx";
 import Map from "views/Map.jsx";
 import Notifications from "views/Notifications.jsx";
-import Rtl from "views/Rtl.jsx";
 import TableList from "views/TableList.jsx";
 import Typography from "views/Typography.jsx";
 import UserProfile from "views/UserProfile.jsx";
 
 var routes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-chart-pie-36",
+    path: "/serverRoom",
+    name: "Серверная (нижняя)",
+    icon: "tim-icons icon-tv-2",
     component: Dashboard,
+    layout: "/admin"
+  },
+  {
+    path: "/hall",
+    name: "Зал",
+    icon: "tim-icons icon-bank",
+    //component: DashboardHall,
+    layout: "/admin"
+  },
+  {
+    path: "/all",
+    name: "Все датчики",
+    icon: "tim-icons icon-wifi",
+    //component: DashboardHall,
     layout: "/admin"
   },
   {
@@ -23,7 +36,7 @@ var routes = [
     icon: "tim-icons icon-atom",
     component: Icons,
     layout: "/admin"
-  },
+  } /*,
   {
     path: "/map",
     name: "Map",
@@ -63,14 +76,6 @@ var routes = [
     icon: "tim-icons icon-align-center",
     component: Typography,
     layout: "/admin"
-  },
-  {
-    path: "/rtl-support",
-    name: "RTL Support",
-    rtlName: "ار تي ال",
-    icon: "tim-icons icon-world",
-    component: Rtl,
-    layout: "/rtl"
-  }
+  }*/
 ];
 export default routes;

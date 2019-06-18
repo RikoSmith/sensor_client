@@ -93,7 +93,8 @@ class AdminNavbar extends React.Component {
                 </button>
               </div>
               <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
-                {this.props.brandText}
+                {/*this.props.brandText*/}
+                Панель управления
               </NavbarBrand>
             </div>
             <button
