@@ -1,7 +1,8 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
-import instance from "../../utils/axiosConf";
+import axios from "axios";
+import ipSwitch from "utils/axiosConf";
 
 let chartOptions = {
   maintainAspectRatio: false,
@@ -60,6 +61,7 @@ class LineWrapper extends React.Component {
       temp: 0,
       time: "N/A",
       name: this.props.url,
+      endpointUrl: ipSwitch.local,
       data: canvas => {
         let ctx = canvas.getContext("2d");
 
@@ -116,8 +118,8 @@ class LineWrapper extends React.Component {
       let prevLabels = this.state.labels;
 
       //api call
-      instance
-        .get("/sensorData?name=server_room_one")
+      axios
+        .get(this.state.endpointUrl + "/sensorData?name=server_room_one")
         .then(response => {
           console.log(response.data);
           //this.setState({ refreshing: false, data: response.data.fdataList });
@@ -137,7 +139,9 @@ class LineWrapper extends React.Component {
           });
         })
         .catch(err => {
+          this.setState({ endpointUrl: ipSwitch.remote });
           console.log(err);
+          console.log("Switched to remote endpoint: " + ipSwitch.remote);
         });
     }, 5000);
   }
