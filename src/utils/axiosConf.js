@@ -1,5 +1,5 @@
 var ipSwitch = {
-  local: "https://allem.localtunnel.me/api",
+  local: "http://10.0.40.99:3000/api",
   remote: "https://allem.localtunnel.me/api"
 };
 
