@@ -1,6 +1,6 @@
 var ipSwitch = {
-  local: "https://allem.localtunnel.me/api",
-  remote: "https://allem.localtunnel.me/api"
+  local: "https://api.allem.tk/api",
+  remote: "https://api.allem.tk/api"
 };
 
 export default ipSwitch;
