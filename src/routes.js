@@ -1,5 +1,7 @@
 import Dashboard from "views/Dashboard.jsx";
 import DashboardHall from "views/DashboardHall.jsx";
+import DashboardMain from "views/DashboardMain.jsx";
+import DashboardMap from "views/DashboardMap.jsx";
 import Icons from "views/Icons.jsx";
 import Map from "views/Map.jsx";
 import Notifications from "views/Notifications.jsx";
@@ -8,6 +10,20 @@ import Typography from "views/Typography.jsx";
 import UserProfile from "views/UserProfile.jsx";
 
 var routes = [
+  {
+    path: "/main",
+    name: "Все",
+    icon: "tim-icons icon-wifi",
+    component: DashboardMain,
+    layout: "/admin"
+  },
+  {
+    path: "/map",
+    name: "План здания",
+    icon: "tim-icons icon-map-big",
+    component: DashboardMap,
+    layout: "/admin"
+  },
   {
     path: "/serverRoom",
     name: "Серверная (нижняя)",
@@ -19,14 +35,7 @@ var routes = [
     path: "/hall",
     name: "Зал",
     icon: "tim-icons icon-bank",
-    //component: DashboardHall,
-    layout: "/admin"
-  },
-  {
-    path: "/all",
-    name: "Все датчики",
-    icon: "tim-icons icon-wifi",
-    //component: DashboardHall,
+    component: DashboardHall,
     layout: "/admin"
   },
   {

@@ -30,8 +30,8 @@ let chartOptions = {
           zeroLineColor: "transparent"
         },
         ticks: {
-          suggestedMin: 20,
-          suggestedMax: 23,
+          suggestedMin: 22,
+          suggestedMax: 24,
           padding: 20,
           fontColor: "#9a9a9a"
         }
@@ -94,7 +94,7 @@ class LineWrapper extends React.Component {
           ]
         };
       },
-      dataArray: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+      dataArray: [22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22],
       labels: [
         "--:--",
         "--:--",
@@ -119,7 +119,7 @@ class LineWrapper extends React.Component {
 
       //api call
       axios
-        .get(this.state.endpointUrl + "/sensorData?name=server_room_one")
+        .get(this.state.endpointUrl + this.props.url)
         .then(response => {
           console.log(response.data);
           //this.setState({ refreshing: false, data: response.data.fdataList });
@@ -155,8 +155,8 @@ class LineWrapper extends React.Component {
         <CardHeader>
           <Row>
             <Col className="text-left" sm="6">
-              <h5 className="card-category">Серверная</h5>
-              <CardTitle tag="h2">Температура помещения</CardTitle>
+              <h5 className="card-category">{this.props.data}</h5>
+              <CardTitle tag="h2">{this.props.name}</CardTitle>
             </Col>
             <Col className="text-right" sm="6">
               <h5 className="card-category">

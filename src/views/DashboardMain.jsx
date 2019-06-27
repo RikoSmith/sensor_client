@@ -22,7 +22,14 @@ class Dashboard extends React.Component {
       <>
         <div className="content">
           <Row>
-            <Col xs="12">
+            <Col xs="12" md="6" sm="6" lg="6">
+              <LineWrapper
+                url="/sensorData?name=hall_one"
+                name="Главный зал"
+                data="Температура помещения"
+              />
+            </Col>
+            <Col xs="12" md="6" sm="6" lg="6">
               <LineWrapper
                 url="/sensorData?name=server_room_one"
                 name="Серверная"
