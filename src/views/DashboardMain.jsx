@@ -36,6 +36,13 @@ class Dashboard extends React.Component {
                 data="Температура помещения"
               />
             </Col>
+            <Col xs="12" md="6" sm="6" lg="6">
+              <LineWrapper
+                url="/sensorData?name=droom_one"
+                name="Репетиционный зал"
+                data="Температура помещения"
+              />
+            </Col>
           </Row>
         </div>
       </>
